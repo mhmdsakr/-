@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>مُنتِجة</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <!-- أيقونة المتصفح -->
+  <link href="assets/img/logo.png" rel="icon" sizes="32x32">
+  <!-- أيقونة Apple Touch -->
+  <link href="assets/img/logo.png" rel="apple-touch-icon" sizes="180x180">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link rel="stylesheet" href="assets/icons/all.min.css">
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <h1 class="main-title">مُنتِجة</h1>
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#"><i class="bi bi-gear navicon"></i>الانتاج</a></li>
+        <li><a href="#"><i class="bi bi-bar-chart navicon"></i> المبيعات</a></li>
+        <li><a href="#"><i class="bi bi-cart3 navicon"></i> المشتريات</a></li>
+        <li><a href="#"><i class="bi bi-receipt navicon"></i> المصروفات</a></li>
+        <li><a href="#"><i class="bi bi-coin navicon"></i> طرق الدفع</a></li>
+        <li><a href="#"><i class="bi bi-box-arrow-left navicon"></i> تسجيل الخروج</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <main class="main">
+    <div class="main-head">
+      <a class="navbar-brand" href="#">أهلا بك في <span>مُنتِجة</span></a>
+      <img src="assets/img/my-profile-img.jpg" alt="personal photo">
+    </div>
+
+    <!-- content -->
+    <div class="content">
+      <div class="title-page">
+        <h4>
+          عنوان الصفحة
+        </h4>
+      </div>
+
+      <div class="table-action">
+        <div class="add-button">
+          <!-- Add button -->
+          <button class="btn"><i class="bi bi-plus-lg"></i> إضافه منتج</button>
+        </div>
+
+        <div class="print-buttons">
+          <!-- print buttons -->
+          <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+            <button type="button" class="btn"><i id="exportPDF" class="fa-solid fa-file-pdf"></i></button>
+            <button type="button" class="btn"><i id="exportExcel" class="fa-solid fa-file-excel"></i></button>
+            <button type="button" class="btn"><i id="printTable" class="fa-solid fa-print"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Start table -->
+      <div class="table-responsive" id="tableContainer">
+        <table id="dataTable" class="table">
+          <thead>
+            <tr>
+              <th scope="col">رقم المنتج</th>
+              <th scope="col">اسم المنتج</th>
+              <th scope="col">رمز المنتج</th>
+              <th scope="col">السعر</th>
+              <th scope="col">التكلفة</th>
+              <th scope="col">الكمية المتاحة</th>
+              <th scope="col">الوحدة</th>
+              <th scope="col">التصنيف</th>
+              <th scope="col">تاريخ الانتهاء</th>
+              <th scope="col">الباركود</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>234567</td>
+              <td>بنطلون</td>
+              <td>SKU124</td>
+              <td>180 ريال</td>
+              <td>120 ريال</td>
+              <td>30</td>
+              <td>قطعة</td>
+              <td>ملابس</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234568</td>
+              <td>هاتف</td>
+              <td>SKU125</td>
+              <td>1500 ريال</td>
+              <td>1300 ريال</td>
+              <td>20</td>
+              <td>قطعة</td>
+              <td>إلكترونيات</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234567</td>
+              <td>بنطلون</td>
+              <td>SKU124</td>
+              <td>180 ريال</td>
+              <td>120 ريال</td>
+              <td>30</td>
+              <td>قطعة</td>
+              <td>ملابس</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234568</td>
+              <td>هاتف</td>
+              <td>SKU125</td>
+              <td>1500 ريال</td>
+              <td>1300 ريال</td>
+              <td>20</td>
+              <td>قطعة</td>
+              <td>إلكترونيات</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234567</td>
+              <td>بنطلون</td>
+              <td>SKU124</td>
+              <td>180 ريال</td>
+              <td>120 ريال</td>
+              <td>30</td>
+              <td>قطعة</td>
+              <td>ملابس</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234568</td>
+              <td>هاتف</td>
+              <td>SKU125</td>
+              <td>1500 ريال</td>
+              <td>1300 ريال</td>
+              <td>20</td>
+              <td>قطعة</td>
+              <td>إلكترونيات</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234567</td>
+              <td>بنطلون</td>
+              <td>SKU124</td>
+              <td>180 ريال</td>
+              <td>120 ريال</td>
+              <td>30</td>
+              <td>قطعة</td>
+              <td>ملابس</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234568</td>
+              <td>هاتف</td>
+              <td>SKU125</td>
+              <td>1500 ريال</td>
+              <td>1300 ريال</td>
+              <td>20</td>
+              <td>قطعة</td>
+              <td>إلكترونيات</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234567</td>
+              <td>بنطلون</td>
+              <td>SKU124</td>
+              <td>180 ريال</td>
+              <td>120 ريال</td>
+              <td>30</td>
+              <td>قطعة</td>
+              <td>ملابس</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234568</td>
+              <td>هاتف</td>
+              <td>SKU125</td>
+              <td>1500 ريال</td>
+              <td>1300 ريال</td>
+              <td>20</td>
+              <td>قطعة</td>
+              <td>إلكترونيات</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234567</td>
+              <td>بنطلون</td>
+              <td>SKU124</td>
+              <td>180 ريال</td>
+              <td>120 ريال</td>
+              <td>30</td>
+              <td>قطعة</td>
+              <td>ملابس</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234568</td>
+              <td>هاتف</td>
+              <td>SKU125</td>
+              <td>1500 ريال</td>
+              <td>1300 ريال</td>
+              <td>20</td>
+              <td>قطعة</td>
+              <td>إلكترونيات</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234567</td>
+              <td>بنطلون</td>
+              <td>SKU124</td>
+              <td>180 ريال</td>
+              <td>120 ريال</td>
+              <td>30</td>
+              <td>قطعة</td>
+              <td>ملابس</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234568</td>
+              <td>هاتف</td>
+              <td>SKU125</td>
+              <td>1500 ريال</td>
+              <td>1300 ريال</td>
+              <td>20</td>
+              <td>قطعة</td>
+              <td>إلكترونيات</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234567</td>
+              <td>بنطلون</td>
+              <td>SKU124</td>
+              <td>180 ريال</td>
+              <td>120 ريال</td>
+              <td>30</td>
+              <td>قطعة</td>
+              <td>ملابس</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234568</td>
+              <td>هاتف</td>
+              <td>SKU125</td>
+              <td>1500 ريال</td>
+              <td>1300 ريال</td>
+              <td>20</td>
+              <td>قطعة</td>
+              <td>إلكترونيات</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234567</td>
+              <td>بنطلون</td>
+              <td>SKU124</td>
+              <td>180 ريال</td>
+              <td>120 ريال</td>
+              <td>30</td>
+              <td>قطعة</td>
+              <td>ملابس</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234568</td>
+              <td>هاتف</td>
+              <td>SKU125</td>
+              <td>1500 ريال</td>
+              <td>1300 ريال</td>
+              <td>20</td>
+              <td>قطعة</td>
+              <td>إلكترونيات</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234567</td>
+              <td>بنطلون</td>
+              <td>SKU124</td>
+              <td>180 ريال</td>
+              <td>120 ريال</td>
+              <td>30</td>
+              <td>قطعة</td>
+              <td>ملابس</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234568</td>
+              <td>هاتف</td>
+              <td>SKU125</td>
+              <td>1500 ريال</td>
+              <td>1300 ريال</td>
+              <td>20</td>
+              <td>قطعة</td>
+              <td>إلكترونيات</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234567</td>
+              <td>بنطلون</td>
+              <td>SKU124</td>
+              <td>180 ريال</td>
+              <td>120 ريال</td>
+              <td>30</td>
+              <td>قطعة</td>
+              <td>ملابس</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234568</td>
+              <td>هاتف</td>
+              <td>SKU125</td>
+              <td>1500 ريال</td>
+              <td>1300 ريال</td>
+              <td>20</td>
+              <td>قطعة</td>
+              <td>إلكترونيات</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234567</td>
+              <td>بنطلون</td>
+              <td>SKU124</td>
+              <td>180 ريال</td>
+              <td>120 ريال</td>
+              <td>30</td>
+              <td>قطعة</td>
+              <td>ملابس</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234568</td>
+              <td>هاتف</td>
+              <td>SKU125</td>
+              <td>1500 ريال</td>
+              <td>1300 ريال</td>
+              <td>20</td>
+              <td>قطعة</td>
+              <td>إلكترونيات</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234567</td>
+              <td>بنطلون</td>
+              <td>SKU124</td>
+              <td>180 ريال</td>
+              <td>120 ريال</td>
+              <td>30</td>
+              <td>قطعة</td>
+              <td>ملابس</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234568</td>
+              <td>هاتف</td>
+              <td>SKU125</td>
+              <td>1500 ريال</td>
+              <td>1300 ريال</td>
+              <td>20</td>
+              <td>قطعة</td>
+              <td>إلكترونيات</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234567</td>
+              <td>بنطلون</td>
+              <td>SKU124</td>
+              <td>180 ريال</td>
+              <td>120 ريال</td>
+              <td>30</td>
+              <td>قطعة</td>
+              <td>ملابس</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234568</td>
+              <td>هاتف</td>
+              <td>SKU125</td>
+              <td>1500 ريال</td>
+              <td>1300 ريال</td>
+              <td>20</td>
+              <td>قطعة</td>
+              <td>إلكترونيات</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234567</td>
+              <td>بنطلون</td>
+              <td>SKU124</td>
+              <td>180 ريال</td>
+              <td>120 ريال</td>
+              <td>30</td>
+              <td>قطعة</td>
+              <td>ملابس</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234568</td>
+              <td>هاتف</td>
+              <td>SKU125</td>
+              <td>1500 ريال</td>
+              <td>1300 ريال</td>
+              <td>20</td>
+              <td>قطعة</td>
+              <td>إلكترونيات</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234567</td>
+              <td>بنطلون</td>
+              <td>SKU124</td>
+              <td>180 ريال</td>
+              <td>120 ريال</td>
+              <td>30</td>
+              <td>قطعة</td>
+              <td>ملابس</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234568</td>
+              <td>هاتف</td>
+              <td>SKU125</td>
+              <td>1500 ريال</td>
+              <td>1300 ريال</td>
+              <td>20</td>
+              <td>قطعة</td>
+              <td>إلكترونيات</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234567</td>
+              <td>بنطلون</td>
+              <td>SKU124</td>
+              <td>180 ريال</td>
+              <td>120 ريال</td>
+              <td>30</td>
+              <td>قطعة</td>
+              <td>ملابس</td>
+              <td>1/10/2024</td>
+              <td><button class="btn btn-link p-0">Print</button></td>
+            </tr>
+            <tr>
+              <td>234568</td>
+              <td>هاتف</td>
+              <td>SKU125</td>
+              <td>1500 ريال</td>
+              <td>1300 ريال</td>
+              <td>20</td>
+              <td>قطعة</td>
+              <td>إلكترونيات</td>
+              <td>1/10/2024</td>
+              <td><button class="btn">Print</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div> <!-- End table -->
+
+
+
+
+
+
+
+
+
+
+    </div><!-- /content -->
+
+  </main>
+
+
+
+
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <!-- إضافة مكتبات jsPDF و autoTable -->
+  <script src="assets/js/jspdf.umd.min.js"></script>
+  <script src="assets/js/jspdf.plugin.autotable.min.js"></script>
+  <!-- SheetJS -->
+  <script src="assets/js/xlsx.full.min.js"></script>
+
+</body>
+
+</html>

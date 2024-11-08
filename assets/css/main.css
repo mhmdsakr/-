@@ -1,0 +1,821 @@
+body {
+  font-family: var(--default-font);
+}
+
+/* * {
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+} */
+
+/* Fonts */
+:root {
+  --default-font: "Cairo", sans-serif;
+  --heading-font: "Raleway", sans-serif;
+  --nav-font: "Poppins", sans-serif;
+}
+
+@font-face {
+  font-family: 'Cairo';
+  src: url('../fonts/Cairo-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cairo';
+  src: url('../fonts/Cairo-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cairo';
+  src: url('../fonts/Cairo-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gulzar';
+  src: url('../fonts/Gulzar-Regular.ttf') format('truetype');
+  font-weight: 400;
+  line-height: 90px;
+  font-style: normal;
+}
+
+h4 {
+  color: #A51564 !important;
+  font-family: var(--default-font);
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+button {
+  background-color: #A51564 !important;
+  color: #FFFFFF !important;
+  font-weight: bold !important;
+}
+
+button:hover {
+  background-color: #920d58 !important;
+}
+
+/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+:root {
+  --background-color: #ffffff;
+  /* Background color for the entire website, including individual sections */
+  --default-color: #272829;
+  /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #050d18;
+  /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #149ddd;
+  /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #ffffff;
+  /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #ffffff;
+  /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --purble-color: #920d58;
+}
+
+/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+:root {
+  --nav-color: #a8a9b4;
+  /* The default color of the main navmenu links */
+  --nav-hover-color: #ffffff;
+  /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #040b14;
+  /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #040b14;
+  /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #a8a9b4;
+  /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #ffffff;
+  /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+}
+
+/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+
+.light-background {
+  --background-color: #f4fafd;
+  --surface-color: #ffffff;
+}
+
+.dark-background {
+  --background-color: #040b14;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --surface-color: #151f2b;
+  --contrast-color: #ffffff;
+}
+
+/* Smooth scroll */
+:root {
+  scroll-behavior: smooth;
+}
+
+/*--------------------------------------------------------------
+# General Styling & Shared Classes
+--------------------------------------------------------------*/
+body {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+  font-family: var(--default-font);
+}
+
+/*--------------------------------------------------------------
+# Global Header
+--------------------------------------------------------------*/
+.header {
+  color: var(--default-color);
+  background-color: #A51564;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 0 15px;
+  width: 280px;
+  transition: all ease-in-out 0.3s;
+  overflow-y: auto;
+  z-index: 997;
+  border-radius: 0 30px 30px 0;
+  border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.profile-img .main-title {
+  font-family: 'Gulzar', serif;
+  font-size: 128px;
+  font-weight: 400;
+  line-height: 90px;
+  color: #FFFFFF;
+  padding-top: 8rem;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+@media (min-width: 1200px) {
+
+  .header~main,
+  .header~#footer {
+    margin-left: 300px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .header {
+    left: -100%;
+  }
+}
+
+.header.header-show {
+  left: 0;
+}
+
+.header .header-toggle {
+  color: var(--contrast-color);
+  background-color: #A51564;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  position: fixed;
+  top: 1.5rem;
+  left: 1rem;
+  z-index: 9999;
+  transition: background-color 0.3s;
+}
+
+.header .header-toggle:hover {
+  color: var(--contrast-color);
+  background-color: #A51564;
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+.mobile-nav-toggle {
+  display: none;
+}
+
+.navmenu {
+  padding: 0;
+  z-index: 9997;
+}
+
+.navmenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navmenu a,
+.navmenu a:focus {
+  color: #FFFFFF;
+  padding: 15px 10px;
+  font-family: var(--default-font);
+  font-size: 16px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.navmenu a .navicon,
+.navmenu a:focus .navicon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.navmenu a:hover,
+.navmenu .active,
+.navmenu .active:focus {
+  color: var(--nav-hover-color);
+}
+
+.navmenu a:hover .navicon,
+.navmenu .active .navicon,
+.navmenu .active:focus .navicon {
+  color: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  overflow: hidden;
+  background: var(--background-color);
+  transition: all 0.6s ease-out;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #ffffff;
+  border-color: #A51564 transparent #A51564 transparent;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: animate-preloader 1.5s linear infinite;
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Index
+--------------------------------------------------------------*/
+.main-head {
+  position: fixed;
+  background-color: #FFFFFF;
+  top: 0;
+  right: 0;
+  padding-top: 1rem;
+  z-index: 9;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: .5rem;
+  font-family: 'Gulzar', serif;
+  font-size: 2rem;
+}
+
+.main-head img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.main-head a span {
+  font-size: 3rem;
+  color: #A51564;
+
+}
+
+.navmenu {
+  direction: rtl;
+  text-align: right;
+}
+
+.navicon {
+  margin-left: 8px;
+}
+
+.content {
+  width: 100%;
+  height: auto;
+  padding-top: 8rem;
+}
+
+.title-page {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content .table-action {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.content .add-button {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: .5rem;
+}
+
+.content .print-buttons {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: .5rem;
+}
+
+.print-buttons .btn-group button {
+  background-color: #FFFFFF !important;
+  color: #A51564 !important;
+  font-size: 1.5rem !important;
+  border: solid 1px gray;
+  width: 4rem;
+  border-radius: 30px;
+}
+
+.table-responsive {
+  direction: rtl;
+  overflow-x: auto;
+  padding-left: .5rem;
+}
+
+.table-responsive th {
+  color: #A51564;
+}
+
+.table-responsive::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background-color: #A51564;
+  border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+.table th,
+.table td {
+  min-width: 1rem;
+  white-space: nowrap;
+}
+
+/*--------------------------------------------------------------
+# landingPage
+--------------------------------------------------------------*/
+.landingPage {
+  width: 100%;
+  height: 100vh;
+  background-color: #A51564;
+}
+
+.landingPage .icons {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .8rem;
+}
+
+.landingPage .icons i {
+  color: #FFFFFF;
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+.landingPage .title-head {
+  width: 100%;
+  height: auto;
+  padding-top: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landingPage .title {
+  font-family: 'Gulzar', serif;
+  color: #FFFFFF;
+  font-size: 10rem;
+}
+
+.landingPage .button-group {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 150px;
+  padding: .5rem;
+}
+
+/* شكل الأزرار */
+.button-group .btn-link {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 20px;
+  color: white;
+  background-color: #A51564;
+  border: 1px solid #cccccc;
+  width: 80%;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.button-group .btn-link:hover {
+  background-color: #920d58;
+}
+
+/* شاشات صغيرة - عرض الزرين فوق بعض */
+@media (max-width: 768px) {
+  .landingPage .button-group {
+    position: absolute;
+    bottom: 5rem;
+    /* المسافة من الأسفل */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+.topics {
+  text-align: right;
+  direction: rtl;
+}
+
+.topics h2 {
+  color: #A51564;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.topics p {
+  font-size: 1rem;
+
+}
+
+.topics span {
+  color: black;
+  font-weight: bold;
+}
+
+/*--------------------------------------------------------------
+# signUp && login
+--------------------------------------------------------------*/
+.signUp .top {
+  width: 100%;
+  height: 50vh;
+  background-color: #A51564;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.signUp h1 {
+  font-family: 'Gulzar', serif;
+  font-size: 128px;
+  font-weight: 400;
+  line-height: 90px;
+  color: #FFFFFF;
+}
+
+.signUp {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signUp .form {
+  position: absolute;
+  z-index: 9;
+  width: 90%;
+  height: auto;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  background-color: #FFFFFF;
+  border-radius: 10%;
+  top: 65%;
+}
+
+.signUp .group {
+  height: 6rem;
+}
+
+.signUp label {
+  font-weight: bold;
+}
+
+.signUp .form button {
+  background-color: #b02669;
+  border-color: #b02669;
+  height: 4rem;
+}
+
+/*--------------------------------------------------------------
+# acctivate Account && forgot Pass
+--------------------------------------------------------------*/
+.acctivateAccount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100vh;
+}
+
+.acctivateAccount p {
+  font-size: 1.5rem;
+  /* font-weight: bold; */
+}
+
+.counter {
+  padding-top: 1rem;
+  animation: countdown 5s steps(5, end) forwards;
+}
+
+@keyframes countdown {
+  0% {
+    content: "٥";
+  }
+
+  20% {
+    content: "٤";
+  }
+
+  40% {
+    content: "٣";
+  }
+
+  60% {
+    content: "٢";
+  }
+
+  80% {
+    content: "١";
+  }
+
+  100% {
+    content: "٠";
+  }
+}
+
+.counter::before {
+  content: "5";
+  /* يبدأ من 5 */
+  animation: countdown 5s steps(5, end) forwards;
+}
+
+
+
+/*--------------------------------------------------------------
+# Forgot Pass
+--------------------------------------------------------------*/
+
+.forgot-pass {
+  height: 100vh;
+}
+
+.forgot-pass .bi-box-arrow-left {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 30px;
+}
+
+.forgot-pass i {
+  color: #A51564;
+}
+
+.forgot-pass .whatsApp-logo {
+  width: 7rem;
+  height: 7rem;
+  margin-bottom: 2rem;
+}
+
+.forgot-pass .whatsApp-button {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 10px;
+}
+
+.bg-purble:focus,
+.bg-purble:active {
+  outline: none;
+  background-color: #920d58;
+}
+
+
+
+
+
+
+/*--------------------------------------------------------------
+# Home Page
+--------------------------------------------------------------*/
+.home-page {
+  padding-right: .5rem;
+  padding-left: .5rem;
+  width: 99%;
+  height: auto;
+}
+
+.home-page li {
+  direction: rtl;
+  text-align: right;
+}
+
+.home-page .top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-page li span {
+  color: var(--purble-color);
+  font-weight: bold;
+}
+
+.home-page .mid {
+  width: 100%;
+  height: auto;
+}
+
+.home-page .mid .stat-box {
+  height: 7.5rem;
+}
+
+.home-page .stats .stat-box {
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+}
+
+.home-page .chart-icon {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-page .chart-detail {
+  width: 50%;
+  height: 100%;
+  direction: rtl;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-page .stat-box img {
+  width: 5rem;
+  height: 5rem;
+}
+
+.home-page .profit {
+  font-size: 2rem;
+}
+
+.home-page .diff {
+  color: #A51564;
+  font-family: 'Cairo', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.home-page .bottom {
+  width: 100%;
+  height: 20rem;
+  padding: 1rem;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-page .bottom .right {
+  width: 50%;
+  height: 100%;
+}
+
+.home-page .bottom .left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: start;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.home-page .left div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.home-page .bottom .dot {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.home-page .bg-purble {
+  background-color: #A51564;
+}
+
+.home-page .right {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  gap: 10px;
+  height: 200px;
+}
+
+.home-page .progress {
+  width: 30px;
+  background-color: #e9ecef;
+  position: relative;
+  height: 100%;
+}
+
+.home-page .progress-bar {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  color: white;
+  font-size: 0.75rem;
+}
